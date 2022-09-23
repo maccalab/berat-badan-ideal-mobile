@@ -24,14 +24,13 @@ class MainActivity : AppCompatActivity() {
         val alamat = findViewById<EditText>(R.id.et_alamat)
         val btnDeteksi = findViewById<Button>(R.id.btn_deteksi)
 
-        val send = database.getReference("Send")
-        val tinggiBadan = database.getReference("Tinggi")
-        val beratBadan = database.getReference("Berat")
-        val kategori = database.getReference("Ideal")
+        val send = database.getReference("result").child("Send")
+        val tinggiBadan = database.getReference("result").child("Tinggi")
+        val beratBadan = database.getReference("result").child("Berat")
+        val kategori = database.getReference("result").child("Ideal")
         var count = -1;
         send.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(data: DataSnapshot) {
-                Log.d("DIDIMAMAN", data.value.toString())
                 count +=1
                 if(count > 0){
                     val namaLengkap = nama.text.toString()
@@ -77,12 +76,10 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this,"Mohon Lengkapi Data", Toast.LENGTH_LONG).show()
                 }else{
                     // Write a message to the database
-                    val berat = database.getReference("Berat")
-                    val gender = database.getReference("Gender")
-                    val ideal = database.getReference("Ideal")
-//                    val send = database.getReference("Send")
-                    val status = database.getReference("Status")
-                    val tinggi = database.getReference("Tinggi")
+                    val gender = database.getReference("biodata").child("gender")
+                    val _nama = database.getReference("biodata").child("nama")
+                    val _umur = database.getReference("biodata").child("umur")
+                    val _alamat = database.getReference("biodata").child("alamat")
 
                     var jk = ""
                     if (jenisKelamin.checkedRadioButtonId == 1){
@@ -91,6 +88,9 @@ class MainActivity : AppCompatActivity() {
                         jk = "P"
                     }
                     gender.setValue(jk)
+                    _nama.setValue(nama.text.toString())
+                    _umur.setValue(umur.text.toString())
+                    _alamat.setValue(alamat.text.toString())
                 }
         }
     }

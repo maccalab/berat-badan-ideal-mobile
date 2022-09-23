@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "982979325501",
+    "firebase_url": "https://bbideal-14f54-default-rtdb.firebaseio.com",
+    "project_id": "bbideal-14f54",
+    "storage_bucket": "bbideal-14f54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982979325501:android:1f64efad8ba4839f540454",
+        "android_client_info": {
+          "package_name": "com.macca.deteksiberatbadanideal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982979325501-k63ph2035vjgrgbouc0iueni6ic53qms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW-dBOm81hYCLJQK7uRwjAHW-MF1j3lwQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982979325501-k63ph2035vjgrgbouc0iueni6ic53qms.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

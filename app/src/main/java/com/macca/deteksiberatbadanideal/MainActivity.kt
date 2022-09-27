@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
                         }else{
                             ideal = "Berat Badan TIDAK IDEAL"
                         }
+                        send.setValue(0)
                         _moveToResult(namaLengkap, _jenisKelamin, umur, tinggi, berat, ideal, alamat)
                     }
                 }
@@ -80,6 +81,7 @@ class MainActivity : AppCompatActivity() {
                     val _nama = database.getReference("biodata").child("nama")
                     val _umur = database.getReference("biodata").child("umur")
                     val _alamat = database.getReference("biodata").child("alamat")
+                    val _status = database.getReference("result").child("Status")
 
                     var jk = ""
                     if (jenisKelamin.checkedRadioButtonId == 1){
@@ -88,6 +90,7 @@ class MainActivity : AppCompatActivity() {
                         jk = "P"
                     }
                     gender.setValue(jk)
+                    _status.setValue(1)
                     _nama.setValue(nama.text.toString())
                     _umur.setValue(umur.text.toString())
                     _alamat.setValue(alamat.text.toString())

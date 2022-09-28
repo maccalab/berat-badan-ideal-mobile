@@ -30,9 +30,9 @@ class MainActivity : AppCompatActivity() {
         val kategori = database.getReference("result").child("Ideal")
         var count = -1;
         send.addValueEventListener(object : ValueEventListener{
-            override fun onDataChange(data: DataSnapshot) {
+            override fun onDataChange(dataSend: DataSnapshot) {
                 count +=1
-                if(count > 0){
+                if(count > 0 && dataSend.value == 1){
                     val namaLengkap = nama.text.toString()
                     var _jenisKelamin = ""
                     if (jenisKelamin.checkedRadioButtonId == 1){

@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         send.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(dataSend: DataSnapshot) {
                 count +=1
-                if(count > 0 && dataSend.value == 1){
+                if(count > 0 && dataSend.value.toString() == "1"){
                     val namaLengkap = nama.text.toString()
                     var _jenisKelamin = ""
                     if (jenisKelamin.checkedRadioButtonId == 1){

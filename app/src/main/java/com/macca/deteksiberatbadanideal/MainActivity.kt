@@ -84,10 +84,11 @@ class MainActivity : AppCompatActivity() {
                     val _status = database.getReference("result").child("Status")
 
                     var jk = ""
-                    if (jenisKelamin.checkedRadioButtonId == 1){
-                        jk = "L"
-                    }else{
+                    val selectedJk = findViewById<RadioButton>(jenisKelamin.checkedRadioButtonId)
+                    if (selectedJk.text.toString() == "Perempuan"){
                         jk = "P"
+                    }else{
+                        jk = "L"
                     }
                     gender.setValue(jk)
                     _status.setValue(1)

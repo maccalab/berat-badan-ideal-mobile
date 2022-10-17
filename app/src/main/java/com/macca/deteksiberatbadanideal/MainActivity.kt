@@ -34,12 +34,10 @@ class MainActivity : AppCompatActivity() {
                 count +=1
                 if(count > 0 && dataSend.value.toString() == "1"){
                     val namaLengkap = nama.text.toString()
-                    var _jenisKelamin = ""
-                    if (jenisKelamin.checkedRadioButtonId == 1){
-                        _jenisKelamin = "Laki - laki"
-                    }else{
-                        _jenisKelamin = "Perempuan"
-                    }
+
+                    val selectedJk = findViewById<RadioButton>(jenisKelamin.checkedRadioButtonId)
+                    var _jenisKelamin = selectedJk.text.toString()
+
                     val umur = umur.text.toString()
                     val alamat = alamat.text.toString()
 
